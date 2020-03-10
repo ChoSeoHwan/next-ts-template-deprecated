@@ -1,0 +1,35 @@
+{
+  "name": "next-ts-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ChoSeoHwan/next-ts-template.git",
+  "author": "wtae1216 <wtae1216@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "next": "^9.3.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/node": "^13.9.0",
+    "@types/react": "^16.9.23",
+    "prettier": "1.19.1",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
+    "tslint": "^6.0.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-import-group-ordering": "^2.1.2",
+    "tslint-react": "^4.2.0",
+    "tslint-react-hooks": "^2.2.1",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "dev": "next dev --hostname test.choseohwan.com --port 80",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "lint-fix": "tslint --fix --config tslint.json \"{src,test}/**/*.{ts,tsx}\""
+  }
+}

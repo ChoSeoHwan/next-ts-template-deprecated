@@ -1,0 +1,113 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended",
+        "tslint-react",
+        "tslint-react-hooks",
+        "tslint-eslint-rules",
+        "tslint-import-group-ordering",
+        "tslint-config-prettier"
+    ],
+    "jsRules": {},
+    "rules": {
+        "switch-default": false,
+        "interface-name": true,
+        "semicolon": [
+            true,
+            "always"
+        ],
+        "ordered-imports": false,
+        "quotemark": [
+            true,
+            "single",
+            "jsx-double"
+        ],
+        "no-console": false,
+        "no-empty": false,
+        "no-shadowed-variable": false,
+        "object-literal-sort-keys": false,
+        "import-group-ordering": {
+            "severity": "warning",
+            "options": {
+                "imports-groups": [
+                    {"name": "dependencies"},
+                    {"name": "other"},
+                    {"name": "config"},
+                    {"name": "library"},
+                    {"name": "redux"},
+                    {"name": "constant"},
+                    {"name": "styles"},
+                    {"name": "pages"},
+                    {"name": "templates"},
+                    {"name": "organisms"},
+                    {"name": "molecules"},
+                    {"name": "atoms"}
+                ],
+                "matching-rules": [
+                    {
+                        "type": "dependencies",
+                        "imports-group": "dependencies",
+                        "disable-native-nodejs-modules": true,
+                        "from-package.json": true
+                    },
+                    {
+                        "type": "project",
+                        "matches": "^(config)",
+                        "imports-group": "config"
+                    },
+                    {
+                        "type": "project",
+                        "matches": "^(libs)",
+                        "imports-group": "library"
+                    },
+                    {
+                        "type": "project",
+                        "matches": "^(constants)",
+                        "imports-group": "constant"
+                    },
+                    {
+                        "type": "project",
+                        "matches": "^(store)",
+                        "imports-group": "redux"
+                    },
+                    {
+                        "type": "project",
+                        "matches": "^(styles)",
+                        "imports-group": "styles"
+                    },
+                    {
+                        "type": "project",
+                        "matches": ".*",
+                        "imports-group": "other"
+                    },
+                    {
+                        "type": "project",
+                        "matches": "^(pages)",
+                        "imports-group": "pages"
+                    },
+                    {
+                        "type": "project",
+                        "matches": "^(templates)",
+                        "imports-group": "templates"
+                    },
+                    {
+                        "type": "project",
+                        "matches": "^(organisms)",
+                        "imports-group": "organisms"
+                    },
+                    {
+                        "type": "project",
+                        "matches": "^(molecules)",
+                        "imports-group": "molecules"
+                    },
+                    {
+                        "type": "project",
+                        "matches": "^(atoms)",
+                        "imports-group": "atoms"
+                    }
+                ]
+            }
+        }
+    },
+    "rulesDirectory": []
+}
