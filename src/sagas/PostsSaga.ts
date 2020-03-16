@@ -4,9 +4,11 @@ import axios from 'libs/axios';
 
 import { PostsAction } from 'store/actions';
 
+import { API_URL } from 'constants/domain';
+
 // call posts list api
 function fetchPostsApi() {
-    return axios.get('http://localhost:8000/posts');
+    return axios.get(`${API_URL}/posts`);
 }
 
 // get posts list saga

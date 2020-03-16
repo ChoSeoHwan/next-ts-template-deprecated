@@ -12,10 +12,7 @@
     "rules": {
         "switch-default": false,
         "interface-name": true,
-        "semicolon": [
-            true,
-            "always"
-        ],
+        "semicolon": false,
         "ordered-imports": false,
         "quotemark": [
             true,
@@ -32,11 +29,11 @@
                 "imports-groups": [
                     {"name": "dependencies"},
                     {"name": "other"},
-                    {"name": "config"},
                     {"name": "library"},
-                    {"name": "redux"},
-                    {"name": "constant"},
-                    {"name": "styles"},
+                    {"name": "store"},
+                    {"name": "sagas"},
+                    {"name": "types"},
+                    {"name": "constants"},
                     {"name": "pages"},
                     {"name": "templates"},
                     {"name": "organisms"},
@@ -45,17 +42,6 @@
                 ],
                 "matching-rules": [
                     {
-                        "type": "dependencies",
-                        "imports-group": "dependencies",
-                        "disable-native-nodejs-modules": true,
-                        "from-package.json": true
-                    },
-                    {
-                        "type": "project",
-                        "matches": "^(config)",
-                        "imports-group": "config"
-                    },
-                    {
                         "type": "project",
                         "matches": "^(libs)",
                         "imports-group": "library"
@@ -63,22 +49,22 @@
                     {
                         "type": "project",
                         "matches": "^(constants)",
-                        "imports-group": "constant"
+                        "imports-group": "constants"
+                    },
+                    {
+                        "type": "project",
+                        "matches": "^(types)",
+                        "imports-group": "types"
                     },
                     {
                         "type": "project",
                         "matches": "^(store)",
-                        "imports-group": "redux"
+                        "imports-group": "store"
                     },
                     {
                         "type": "project",
-                        "matches": "^(styles)",
-                        "imports-group": "styles"
-                    },
-                    {
-                        "type": "project",
-                        "matches": ".*",
-                        "imports-group": "other"
+                        "matches": "^(sagas)",
+                        "imports-group": "sagas"
                     },
                     {
                         "type": "project",
@@ -87,23 +73,34 @@
                     },
                     {
                         "type": "project",
-                        "matches": "^(templates)",
+                        "matches": "^(components\/templates)",
                         "imports-group": "templates"
                     },
                     {
                         "type": "project",
-                        "matches": "^(organisms)",
+                        "matches": "^(components\/organisms)",
                         "imports-group": "organisms"
                     },
                     {
                         "type": "project",
-                        "matches": "^(molecules)",
+                        "matches": "^(components\/molecules)",
                         "imports-group": "molecules"
                     },
                     {
                         "type": "project",
-                        "matches": "^(atoms)",
+                        "matches": "^(components\/atoms)",
                         "imports-group": "atoms"
+                    },
+                    {
+                        "type": "dependencies",
+                        "imports-group": "dependencies",
+                        "disable-native-nodejs-modules": true,
+                        "from-package.json": true
+                    },
+                    {
+                        "type": "project",
+                        "matches": ".*",
+                        "imports-group": "other"
                     }
                 ]
             }
