@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-import Layout from 'templates/Layout';
+import GnbLayout from 'components/templates/GnbLayout';
 
-const Home = () => {
+const Home: React.FunctionComponent = () => {
     return (
-        <Layout title={'Home'}>
+        <GnbLayout title={'Home'}>
             <h1>Hello, Next Ts</h1>
-        </Layout>
+        </GnbLayout>
     );
 };
 
