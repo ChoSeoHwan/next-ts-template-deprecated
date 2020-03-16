@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Navigation from 'molecules/header/Navigation';
+import Navigation from 'components/molecules/Navigation';
 
 const Header: React.FunctionComponent = () => (
     <header>
