@@ -2,7 +2,7 @@ import { takeEvery, put, call } from 'redux-saga/effects';
 
 import axios from 'libs/axios';
 
-import { PostsAction } from 'store/actions';
+import { PostsAction } from 'modules/PostsModule';
 
 import { API_URL } from 'constants/domain';
 

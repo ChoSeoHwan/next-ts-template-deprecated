@@ -30,9 +30,9 @@
                     {"name": "dependencies"},
                     {"name": "other"},
                     {"name": "library"},
-                    {"name": "store"},
-                    {"name": "sagas"},
                     {"name": "types"},
+                    {"name": "modules"},
+                    {"name": "sagas"},
                     {"name": "constants"},
                     {"name": "pages"},
                     {"name": "templates"},
@@ -58,8 +58,8 @@
                     },
                     {
                         "type": "project",
-                        "matches": "^(store)",
-                        "imports-group": "store"
+                        "matches": "^(modules)",
+                        "imports-group": "modules"
                     },
                     {
                         "type": "project",
