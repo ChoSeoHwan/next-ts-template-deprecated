@@ -6,9 +6,13 @@ import { END } from 'redux-saga';
 
 import axios from 'libs/axios';
 
-import { initStore, sagaTask, StoreState } from 'store';
+import TStoreState from 'types/TStoreState';
 
-class App extends RootApp<ReduxWrapperAppProps<StoreState>> {
+import { initStore } from 'modules/store';
+
+import { sagaTask } from 'sagas';
+
+class App extends RootApp<ReduxWrapperAppProps<TStoreState>> {
     static async getInitialProps({ Component, ctx }: AppContext) {
         const pageProps = Component.getInitialProps
             ? await Component.getInitialProps(ctx)

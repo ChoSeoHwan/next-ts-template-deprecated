@@ -2,8 +2,9 @@ import React from 'react';
 import { NextPage } from 'next';
 import { shallowEqual, useSelector } from 'react-redux';
 
-import { PostsAction } from 'store/actions';
-import { StoreState } from 'store';
+import TStoreState from 'types/TStoreState';
+
+import { PostsAction } from 'modules/PostsModule';
 
 import GnbLayout from 'components/templates/GnbLayout';
 
@@ -14,7 +15,7 @@ import Error from 'components/atoms/Error';
 
 const Posts: NextPage = () => {
     const { loading, error, data } = useSelector(
-        (state: StoreState) => ({
+        (state: TStoreState) => ({
             loading: state.PostsReducer.loading,
             error: state.PostsReducer.error,
             data: state.PostsReducer.data

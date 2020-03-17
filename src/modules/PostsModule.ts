@@ -6,19 +6,19 @@ import {
 
 import IPost from 'types/IPost';
 
-interface IPostsReducer {
+interface IPostsModule {
     loading: boolean;
     error: string | null;
     data: IPost[];
 }
 
-const initialState: IPostsReducer = {
+const initialState: IPostsModule = {
     loading: false,
     error: null,
     data: []
 };
 
-class PostsReducer extends ImmerReducer<IPostsReducer> {
+class PostsModule extends ImmerReducer<IPostsModule> {
     /**
      * start fetch post
      */
@@ -56,5 +56,5 @@ class PostsReducer extends ImmerReducer<IPostsReducer> {
     }
 }
 
-export default createReducerFunction(PostsReducer, initialState);
-export const PostsAction = createActionCreators(PostsReducer);
+export const PostsReducer = createReducerFunction(PostsModule, initialState);
+export const PostsAction = createActionCreators(PostsModule);
