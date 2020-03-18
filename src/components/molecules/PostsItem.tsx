@@ -1,9 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 
-import IPost from 'types/IPost';
+import IPostData from 'types/IPostData';
 
-const PostsItem: React.FunctionComponent<IPost> = ({ id, userId, title }) => (
+const PostsItem: React.FunctionComponent<IPostData> = ({
+    id,
+    userId,
+    title
+}) => (
     <li>
         <p>
             <strong>{userId}</strong>

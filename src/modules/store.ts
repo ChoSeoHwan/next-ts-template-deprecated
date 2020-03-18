@@ -6,9 +6,15 @@ import TStoreState from 'types/TStoreState';
 
 import rootReducer from 'modules/reducer';
 
-import { runSagaMiddleware, sagaMiddleware } from 'sagas';
+import {
+    createNewSagaMiddleware,
+    runSagaMiddleware,
+    sagaMiddleware
+} from 'sagas';
 
 export const initStore: MakeStore = (initialState: TStoreState) => {
+    createNewSagaMiddleware();
+
     const store: ReturnType<typeof createStore> = createStore(
         rootReducer,
         initialState,

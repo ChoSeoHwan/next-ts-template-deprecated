@@ -1,11 +1,11 @@
 import React from 'react';
 
-import IPost from 'types/IPost';
+import IPostData from 'types/IPostData';
 
 import PostsItem from 'components/molecules/PostsItem';
 
 interface IPostsList {
-    posts: IPost[];
+    posts: IPostData[];
 }
 
 const PostsList: React.FunctionComponent<IPostsList> = ({ posts }) => (

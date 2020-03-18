@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NextPage } from 'next';
-import { shallowEqual, useSelector } from 'react-redux';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 
 import TStoreState from 'types/TStoreState';
 
@@ -14,6 +14,8 @@ import Loading from 'components/atoms/Loading';
 import Error from 'components/atoms/Error';
 
 const Posts: NextPage = () => {
+    const dispatch = useDispatch();
+
     const { loading, error, data } = useSelector(
         (state: TStoreState) => ({
             loading: state.PostsReducer.loading,
@@ -23,9 +25,16 @@ const Posts: NextPage = () => {
         shallowEqual
     );
 
+    // clear post list data when unmount
+    useEffect(
+        () => () => {
+            dispatch(PostsAction.clearPosts());
+        },
+        []
+    );
+
     return (
-        <GnbLayout>
-            <h1>Post List</h1>
+        <GnbLayout title={'Post List'}>
             {loading && <Loading />}
             {!loading && error && <Error message={error} />}
             {!loading && !data && <Error message="게시글이 없습니다." />}
