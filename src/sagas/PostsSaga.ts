@@ -2,9 +2,9 @@ import { takeEvery, put, call } from 'redux-saga/effects';
 
 import axios from 'libs/axios';
 
-import { PostsAction } from 'modules/PostsModule';
-
 import { API_URL } from 'constants/domain';
+
+import { PostsAction } from 'modules/PostsModule';
 
 // call posts list api
 function fetchPostsApi() {

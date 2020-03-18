@@ -4,12 +4,12 @@ import {
     createActionCreators
 } from 'immer-reducer';
 
-import IPost from 'types/IPost';
+import IPostData from 'types/IPostData';
 
 interface IPostsModule {
     loading: boolean;
     error: string | null;
-    data: IPost[];
+    data: IPostData[];
 }
 
 const initialState: IPostsModule = {
@@ -20,7 +20,7 @@ const initialState: IPostsModule = {
 
 class PostsModule extends ImmerReducer<IPostsModule> {
     /**
-     * start fetch post
+     * start fetch post list
      */
     public fetchPosts() {
         this.draftState = {
@@ -31,10 +31,10 @@ class PostsModule extends ImmerReducer<IPostsModule> {
     }
 
     /**
-     * fetch post succeed
+     * fetch post list succeed
      * @param data
      */
-    public fetchPostsSucceed(data: IPost[]) {
+    public fetchPostsSucceed(data: IPostData[]) {
         this.draftState = {
             ...this.draftState,
             loading: false,
@@ -44,7 +44,7 @@ class PostsModule extends ImmerReducer<IPostsModule> {
     }
 
     /**
-     * fetch post failed with error
+     * fetch post list failed with error
      * @param error
      */
     public fetchPostsError(error: string) {
@@ -53,6 +53,13 @@ class PostsModule extends ImmerReducer<IPostsModule> {
             error,
             data: []
         };
+    }
+
+    /**
+     * clear post list
+     */
+    public clearPosts() {
+        this.draftState = initialState;
     }
 }
 
