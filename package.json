@@ -6,6 +6,7 @@
     "author": "wtae1216 <wtae1216@gmail.com>",
     "license": "MIT",
     "dependencies": {
+        "@emotion/core": "^10.0.28",
         "axios": "^0.19.2",
         "dotenv": "^8.2.0",
         "immer": "^6.0.1",

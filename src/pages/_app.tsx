@@ -3,6 +3,9 @@ import RootApp, { AppContext } from 'next/app';
 import { Provider } from 'react-redux';
 import React from 'react';
 import { END } from 'redux-saga';
+import { Global } from '@emotion/core';
+
+import { GlobalStyle } from 'styles/App.style';
 
 import axios from 'libs/axios';
 
@@ -39,6 +42,7 @@ class App extends RootApp<ReduxWrapperAppProps<TStoreState>> {
         const { Component, pageProps, store } = this.props;
         return (
             <Provider store={store}>
+                <Global styles={GlobalStyle} />
                 <Component {...pageProps} />
             </Provider>
         );
