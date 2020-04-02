@@ -4,6 +4,8 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 
 import TStoreState from 'types/TStoreState';
 
+import ApiStatus from 'constants/ApiStatus';
+
 import { PostsAction } from 'modules/PostsModule';
 
 import GnbLayout from 'components/templates/GnbLayout';
@@ -16,11 +18,10 @@ import Error from 'components/atoms/Error';
 const Posts: NextPage = () => {
     const dispatch = useDispatch();
 
-    const { loading, error, data } = useSelector(
-        (state: TStoreState) => ({
-            loading: state.PostsReducer.loading,
-            error: state.PostsReducer.error,
-            data: state.PostsReducer.data
+    const { status, error } = useSelector(
+        ({ PostsReducer }: TStoreState) => ({
+            status: PostsReducer.status,
+            error: PostsReducer.error
         }),
         shallowEqual
     );
@@ -35,10 +36,9 @@ const Posts: NextPage = () => {
 
     return (
         <GnbLayout title={'Post List'}>
-            {loading && <Loading />}
-            {!loading && error && <Error message={error} />}
-            {!loading && !data && <Error message="게시글이 없습니다." />}
-            {!loading && data && <PostsList posts={data} />}
+            {status === ApiStatus.LOADING && <Loading />}
+            {status === ApiStatus.ERROR && error && <Error message={error} />}
+            {status === ApiStatus.SUCCESS && <PostsList />}
         </GnbLayout>
     );
 };

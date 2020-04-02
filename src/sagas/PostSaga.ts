@@ -2,13 +2,13 @@ import { takeEvery, put, call } from 'redux-saga/effects';
 
 import axios from 'libs/axios';
 
-import { API_URL } from 'constants/domain';
+import Domain from 'constants/Domain';
 
 import { PostAction } from 'modules/PostModule';
 
 // call post data api
 function fetchPostApi(id: number) {
-    return axios.get(`${API_URL}/posts/${id}`);
+    return axios.get(`${Domain.API_URL}/posts/${id}`);
 }
 
 // get post data saga
@@ -16,7 +16,7 @@ function* fetchPostSaga(id: number) {
     try {
         const response = yield call(fetchPostApi, id);
 
-        yield put(PostAction.fetchPostSucceed(response.data));
+        yield put(PostAction.fetchPostSuccess(response.data));
     } catch (error) {
         yield put(PostAction.fetchPostError(error));
     }

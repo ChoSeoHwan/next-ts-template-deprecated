@@ -5,16 +5,16 @@ import {
 } from 'immer-reducer';
 
 import IPostData from 'types/IPostData';
+import IApiModule from 'types/IApiModule';
 
-interface IPostModule {
-    loading: boolean;
-    error: string | null;
+import ApiStatus from 'constants/ApiStatus';
+
+interface IPostModule extends IApiModule<IPostData | null> {
     id: number | null;
-    data: IPostData | null;
 }
 
 const initialState: IPostModule = {
-    loading: false,
+    status: ApiStatus.CLEAR,
     error: null,
     id: null,
     data: null
@@ -26,7 +26,7 @@ class PostModule extends ImmerReducer<IPostModule> {
      */
     public fetchPost(id: number) {
         this.draftState = {
-            loading: true,
+            status: ApiStatus.LOADING,
             error: null,
             id,
             data: null
@@ -34,13 +34,13 @@ class PostModule extends ImmerReducer<IPostModule> {
     }
 
     /**
-     * fetch post data succeed
+     * fetch post data success
      * @param data
      */
-    public fetchPostSucceed(data: IPostData) {
+    public fetchPostSuccess(data: IPostData) {
         this.draftState = {
             ...this.draftState,
-            loading: false,
+            status: ApiStatus.SUCCESS,
             error: null,
             data
         };
@@ -53,7 +53,7 @@ class PostModule extends ImmerReducer<IPostModule> {
     public fetchPostError(error: string) {
         this.draftState = {
             ...this.draftState,
-            loading: false,
+            status: ApiStatus.ERROR,
             error,
             data: null
         };
