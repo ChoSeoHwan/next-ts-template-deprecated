@@ -5,7 +5,6 @@
         "tslint-react",
         "tslint-react-hooks",
         "tslint-eslint-rules",
-        "tslint-import-group-ordering",
         "tslint-config-prettier"
     ],
     "jsRules": {},
@@ -13,98 +12,84 @@
         "switch-default": false,
         "interface-name": true,
         "semicolon": false,
-        "ordered-imports": false,
-        "quotemark": [
-            true,
-            "single",
-            "jsx-double"
-        ],
+        "quotemark": [true, "single", "jsx-double"],
         "no-console": false,
         "no-empty": false,
         "no-shadowed-variable": false,
         "object-literal-sort-keys": false,
-        "import-group-ordering": {
-            "severity": "warning",
-            "options": {
-                "imports-groups": [
-                    {"name": "dependencies"},
-                    {"name": "other"},
-                    {"name": "library"},
-                    {"name": "types"},
-                    {"name": "constants"},
-                    {"name": "modules"},
-                    {"name": "sagas"},
-                    {"name": "pages"},
-                    {"name": "templates"},
-                    {"name": "organisms"},
-                    {"name": "molecules"},
-                    {"name": "atoms"}
-                ],
-                "matching-rules": [
+        "ordered-imports": [
+            true,
+            {
+                "grouped-imports": true,
+                "groups": [
                     {
-                        "type": "project",
-                        "matches": "^(libs)",
-                        "imports-group": "library"
+                        "name": "react",
+                        "match": "^react",
+                        "order": 1
                     },
                     {
-                        "type": "project",
-                        "matches": "^(constants)",
-                        "imports-group": "constants"
+                        "name": "library",
+                        "match": "^libs",
+                        "order": 3
                     },
                     {
-                        "type": "project",
-                        "matches": "^(types)",
-                        "imports-group": "types"
+                        "name": "types",
+                        "match": "^types",
+                        "order": 4
                     },
                     {
-                        "type": "project",
-                        "matches": "^(modules)",
-                        "imports-group": "modules"
+                        "name": "constants",
+                        "match": "^constants",
+                        "order": 5
                     },
                     {
-                        "type": "project",
-                        "matches": "^(sagas)",
-                        "imports-group": "sagas"
+                        "name": "data",
+                        "match": "^data",
+                        "order": 6
                     },
                     {
-                        "type": "project",
-                        "matches": "^(pages)",
-                        "imports-group": "pages"
+                        "name": "modules",
+                        "match": "^modules",
+                        "order": 7
                     },
                     {
-                        "type": "project",
-                        "matches": "^(components\/templates)",
-                        "imports-group": "templates"
+                        "name": "sagas",
+                        "match": "^sagas",
+                        "order": 8
                     },
                     {
-                        "type": "project",
-                        "matches": "^(components\/organisms)",
-                        "imports-group": "organisms"
+                        "name": "pages",
+                        "match": "^pages",
+                        "order": 9
                     },
                     {
-                        "type": "project",
-                        "matches": "^(components\/molecules)",
-                        "imports-group": "molecules"
+                        "name": "templates",
+                        "match": "^components/templates",
+                        "order": 10
                     },
                     {
-                        "type": "project",
-                        "matches": "^(components\/atoms)",
-                        "imports-group": "atoms"
+                        "name": "organisms",
+                        "match": "^components/organisms",
+                        "order": 11
                     },
                     {
-                        "type": "dependencies",
-                        "imports-group": "dependencies",
-                        "disable-native-nodejs-modules": true,
-                        "from-package.json": true
+                        "name": "molecules",
+                        "match": "^components/molecules",
+                        "order": 12
                     },
                     {
-                        "type": "project",
-                        "matches": ".*",
-                        "imports-group": "other"
+                        "name": "atoms",
+                        "match": "^components/atoms",
+                        "order": 13
+                    },
+                    {
+                        "name": "node_modules",
+                        "match": ".*",
+                        "order": 2
                     }
                 ]
             }
-        }
+        ]
     },
     "rulesDirectory": []
 }
