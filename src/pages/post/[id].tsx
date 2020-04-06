@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import TStoreState from 'types/TStoreState';
 
+import ApiStatus from 'constants/ApiStatus';
+
 import { PostAction } from 'modules/PostModule';
 
 import GnbLayout from 'components/templates/GnbLayout';
@@ -16,10 +18,9 @@ import Error from 'components/atoms/Error';
 const Post: NextPage = () => {
     const dispatch = useDispatch();
 
-    const { loading, error, data } = useSelector((state: TStoreState) => ({
-        loading: state.PostReducer.loading,
-        error: state.PostReducer.error,
-        data: state.PostReducer.data
+    const { status, error } = useSelector(({ PostReducer }: TStoreState) => ({
+        status: PostReducer.status,
+        error: PostReducer.error
     }));
 
     // clear post data when unmount
@@ -32,10 +33,9 @@ const Post: NextPage = () => {
 
     return (
         <GnbLayout title={'post'}>
-            {loading && <Loading />}
-            {!loading && error && <Error message={error} />}
-            {!loading && !data && <Error message="게시글이 없습니다." />}
-            {!loading && data && <PostBody post={data} />}
+            {status === ApiStatus.LOADING && <Loading />}
+            {status === ApiStatus.ERROR && error && <Error message={error} />}
+            {status === ApiStatus.SUCCESS && <PostBody />}
         </GnbLayout>
     );
 };
