@@ -66,7 +66,8 @@
         "start": "next start",
         "export": "next export",
         "build-storybook": "build-storybook",
-        "test": "jest --watchAll --config=config/jest.config.js"
+        "test": "jest --watchAll --config=config/jest.config.js",
+        "git-hook-reset": "git config --unset core.hookpath"
     },
     "husky": {
         "hooks": {
