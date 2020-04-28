@@ -9,7 +9,7 @@ import { GlobalStyle } from 'styles/App.style';
 
 const AllTheProviders = (
     store: ReturnType<typeof initStore> = initStore()
-): FC => ({ children }): JSX.Element => {
+): FC => ({ children }) => {
     return (
         <Provider store={store}>
             <Global styles={GlobalStyle} />

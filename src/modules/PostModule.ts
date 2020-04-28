@@ -24,7 +24,7 @@ class PostModule extends ImmerReducer<IPostModule> {
     /**
      * start fetch post data
      */
-    public fetchPost(id: number): void {
+    public fetchPost(id: number) {
         this.draftState = {
             status: ApiStatus.LOADING,
             error: null,
@@ -37,7 +37,7 @@ class PostModule extends ImmerReducer<IPostModule> {
      * fetch post data success
      * @param data
      */
-    public fetchPostSuccess(data: IPostData): void {
+    public fetchPostSuccess(data: IPostData) {
         this.draftState = {
             ...this.draftState,
             status: ApiStatus.SUCCESS,
@@ -50,7 +50,7 @@ class PostModule extends ImmerReducer<IPostModule> {
      * fetch post data failed with error
      * @param error
      */
-    public fetchPostError(error: string): void {
+    public fetchPostError(error: string) {
         this.draftState = {
             ...this.draftState,
             status: ApiStatus.ERROR,
@@ -62,7 +62,7 @@ class PostModule extends ImmerReducer<IPostModule> {
     /**
      * clear post data
      */
-    public clearPost(): void {
+    public clearPost() {
         this.draftState = initialState;
     }
 }

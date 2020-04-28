@@ -28,7 +28,7 @@ const Posts: NextPage = () => {
 
     // clear post list data when unmount
     useEffect(
-        () => (): void => {
+        () => () => {
             dispatch(PostsAction.clearPosts());
         },
         []
@@ -43,7 +43,7 @@ const Posts: NextPage = () => {
     );
 };
 
-Posts.getInitialProps = ({ store }): {} => {
+Posts.getInitialProps = ({ store }) => {
     store.dispatch(PostsAction.fetchPosts());
 
     return {};

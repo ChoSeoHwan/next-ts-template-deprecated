@@ -25,7 +25,7 @@ const Post: NextPage = () => {
 
     // clear post data when unmount
     useEffect(
-        () => (): void => {
+        () => () => {
             dispatch(PostAction.clearPost());
         },
         []
@@ -40,7 +40,7 @@ const Post: NextPage = () => {
     );
 };
 
-Post.getInitialProps = ({ store, query }): {} => {
+Post.getInitialProps = ({ store, query }) => {
     const { id } = query;
     const postId: number = parseInt(id.toString(), 10);
     store.dispatch(PostAction.fetchPost(postId));

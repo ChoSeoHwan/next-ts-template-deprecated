@@ -1,8 +1,8 @@
-import { all } from 'redux-saga/effects';
 import createSagaMiddleware from 'redux-saga';
+import { all } from 'redux-saga/effects';
 
-import { PostsSaga } from 'sagas/PostsSaga';
 import { PostSaga } from 'sagas/PostSaga';
+import { PostsSaga } from 'sagas/PostsSaga';
 
 // root saga
 function* rootSaga() {
