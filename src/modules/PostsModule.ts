@@ -9,7 +9,7 @@ import IApiModule from 'types/IApiModule';
 
 import ApiStatus from 'constants/ApiStatus';
 
-interface IPostsModule extends IApiModule<IPostData[]> {}
+type IPostsModule = IApModule<IPostData[]>;
 
 const initialState: IPostsModule = {
     status: ApiStatus.CLEAR,

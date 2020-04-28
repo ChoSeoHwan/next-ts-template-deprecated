@@ -8,15 +8,15 @@ module.exports = {
                 (filename) =>
                     `"${
                         isWin
-                            ? filename.replace(/[\[\]]/g, '[$&]')
+                            ? filename.replace(/[[\]]/g, '[$&]')
                             : escape([filename])
                     }"`
             )
             .join(' ');
         return [
-            `prettier --with-node-modules --ignore-path='./.prettierignore_staged' --write ${escapedFileNames}`,
-            `tslint --fix --config tslint.json ${filenames
-                .map((f) => `"${f.replace(/[\[\]]/g, '[$&]')}"`)
+            `prettier --with-node-modules --write ${escapedFileNames}`,
+            `eslint --fix --config .eslintrc ${filenames
+                .map((f) => `"${f.replace(/[[\]]/g, '[$&]')}"`)
                 .join(' ')}`,
             `git add ${escapedFileNames}`
         ];
@@ -27,13 +27,13 @@ module.exports = {
                 (filename) =>
                     `"${
                         isWin
-                            ? filename.replace(/[\[\]]/g, '[$&]')
+                            ? filename.replace(/[[\]]/g, '[$&]')
                             : escape([filename])
                     }"`
             )
             .join(' ');
         return [
-            `prettier --with-node-modules --ignore-path='./.prettierignore_staged' --write ${escapedFileNames}`,
+            `prettier --with-node-modules --write ${escapedFileNames}`,
             `git add ${escapedFileNames}`
         ];
     }
