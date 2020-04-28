@@ -43,7 +43,7 @@ const Posts: NextPage = () => {
     );
 };
 
-Posts.getInitialProps = async ({ store }) => {
+Posts.getInitialProps = ({ store }): {} => {
     store.dispatch(PostsAction.fetchPosts());
 
     return {};
