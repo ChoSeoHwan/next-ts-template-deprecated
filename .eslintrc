@@ -7,7 +7,8 @@
         }
     },
     "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "simple-import-sort"
     ],
     "extends": [
         "eslint:recommended",
@@ -16,7 +17,26 @@
         "plugin:@typescript-eslint/recommended"
     ],
     "rules": {
-        "@typescript-eslint/no-var-requires": 0
+        "@typescript-eslint/no-var-requires": 0,
+        "simple-import-sort/sort": [
+            "error",
+            {
+                "groups": [
+                    ["^react", "^next", "^\\u0000", "^@?\\w"],
+                    ["^libs"],
+                    ["^types"],
+                    ["^constants"],
+                    ["^data"],
+                    ["^modules"],
+                    ["^sagas"],
+                    ["^pages"],
+                    ["^components/templates"],
+                    ["^components/organisms"],
+                    ["^components/molecules"],
+                    ["^components/atoms"]
+                ]
+            }
+        ]
     },
     "globals": {
         "module": true,

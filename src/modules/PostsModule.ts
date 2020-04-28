@@ -4,12 +4,12 @@ import {
     ImmerReducer
 } from 'immer-reducer';
 
-import IPostData from 'types/IPostData';
 import IApiModule from 'types/IApiModule';
+import IPostData from 'types/IPostData';
 
 import ApiStatus from 'constants/ApiStatus';
 
-type IPostsModule = IApModule<IPostData[]>;
+type IPostsModule = IApiModule<IPostData[]>;
 
 const initialState: IPostsModule = {
     status: ApiStatus.CLEAR,
