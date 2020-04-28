@@ -7,7 +7,7 @@ const PostsItem: React.FunctionComponent<IPostData> = ({
     id,
     userId,
     title
-}) => (
+}: IPostData) => (
     <li>
         <p>
             <strong>{userId}</strong>

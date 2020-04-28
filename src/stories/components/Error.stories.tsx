@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { text, withKnobs } from '@storybook/addon-knobs';
 
 import Error from 'components/atoms/Error';

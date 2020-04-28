@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 interface IPostContent {
     body: string;
 }
 
-const PostContent: React.FunctionComponent<IPostContent> = ({ body }) => (
+const PostContent: FC<IPostContent> = ({ body }: IPostContent) => (
     <div>
         {body.split('\n').map((row, index) => {
             return row.length > 0 ? (

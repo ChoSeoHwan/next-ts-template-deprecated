@@ -5,7 +5,10 @@ interface IPostTitle {
     userId: string;
 }
 
-const PostTitle: React.FunctionComponent<IPostTitle> = ({ title, userId }) => (
+const PostTitle: React.FunctionComponent<IPostTitle> = ({
+    title,
+    userId
+}: IPostTitle) => (
     <h1>
         {title}
         <em>{userId}</em>

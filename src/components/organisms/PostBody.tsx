@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 
 import TStoreState from 'types/TStoreState';
 
-import PostTitle from 'components/molecules/PostTitle';
 import PostContent from 'components/molecules/PostContent';
+import PostTitle from 'components/molecules/PostTitle';
 
 import Error from 'components/atoms/Error';
 
