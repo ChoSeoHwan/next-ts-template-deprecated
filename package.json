@@ -61,13 +61,13 @@
         "typescript": "^3.8.3"
     },
     "scripts": {
-        "dev": "sudo next dev --hostname test.choseohwan.com --port 80",
-        "lint-staged": "lint-staged --config config/lint-staged.config.js",
-        "storybook": "start-storybook -p 6006",
+        "dev": "sudo next dev",
         "build": "next build",
         "start": "next start",
         "export": "next export",
+        "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
+        "lint-staged": "lint-staged --config config/lint-staged.config.js",
         "test": "jest --watchAll --config=config/jest.config.js",
         "git-hook-reset": "git config --unset core.hookpath"
     },
