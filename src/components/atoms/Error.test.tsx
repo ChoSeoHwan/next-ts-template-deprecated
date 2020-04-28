@@ -9,6 +9,8 @@ describe('<Error/>', () => {
         const message = '에러 메시지 입니다.';
 
         const component = render(<Error message={message} />);
-        component.getByText(message);
+        const p = component.getByText(message);
+
+        expect(p).toHaveTextContent(message);
     });
 });

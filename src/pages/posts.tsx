@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { NextPage } from 'next';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { NextPage } from 'next';
 
 import TStoreState from 'types/TStoreState';
 
@@ -12,8 +12,8 @@ import GnbLayout from 'components/templates/GnbLayout';
 
 import PostsList from 'components/organisms/PostsList';
 
-import Loading from 'components/atoms/Loading';
 import Error from 'components/atoms/Error';
+import Loading from 'components/atoms/Loading';
 
 const Posts: NextPage = () => {
     const dispatch = useDispatch();
@@ -43,7 +43,7 @@ const Posts: NextPage = () => {
     );
 };
 
-Posts.getInitialProps = async ({ store }) => {
+Posts.getInitialProps = ({ store }) => {
     store.dispatch(PostsAction.fetchPosts());
 
     return {};

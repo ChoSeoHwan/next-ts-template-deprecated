@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { FC } from 'react';
-
 import { css, jsx } from '@emotion/core';
 
 const ErrorStyle = css`
@@ -14,6 +13,8 @@ interface IError {
 }
 
 /** 에러 메시지 출력용 컴포넌트 */
-const Error: FC<IError> = ({ message }) => <p css={ErrorStyle}>{message}</p>;
+const Error: FC<IError> = ({ message }: IError) => (
+    <p css={ErrorStyle}>{message}</p>
+);
 
 export default Error;

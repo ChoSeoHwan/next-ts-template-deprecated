@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { FC, PropsWithChildren } from 'react';
 import Head from 'next/head';
 
-import Header from 'components/organisms/Header';
 import Footer from 'components/organisms/Footer';
+import Header from 'components/organisms/Header';
 
 interface ILayout {
     title?: string;
 }
 
-const GnbLayout: React.FunctionComponent<ILayout> = ({ children, title }) => (
+const GnbLayout: FC<ILayout> = ({
+    children,
+    title
+}: PropsWithChildren<ILayout>) => (
     <div>
         <Head>
             <title>{title || 'ChoSeoHwan'}</title>
