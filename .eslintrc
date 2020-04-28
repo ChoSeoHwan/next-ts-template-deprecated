@@ -33,7 +33,8 @@
                     ["^components/templates"],
                     ["^components/organisms"],
                     ["^components/molecules"],
-                    ["^components/atoms"]
+                    ["^components/atoms"],
+                    ["^styles"]
                 ]
             }
         ]
