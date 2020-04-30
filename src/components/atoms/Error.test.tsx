@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { render } from 'libs/test-utils';
+import render from 'libs/test-utils';
 
 import Error from 'components/atoms/Error';
 
