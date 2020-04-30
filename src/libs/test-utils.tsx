@@ -18,8 +18,10 @@ const AllTheProviders = (
     );
 };
 
-const render = (ui: React.ReactElement, { store = initStore(), ...options }) =>
-    reactRender(ui, { wrapper: AllTheProviders(store), ...options });
+const render = (
+    ui: React.ReactElement,
+    { store = initStore(), ...options } = {}
+) => reactRender(ui, { wrapper: AllTheProviders(store), ...options });
 
 // re-export everything
 export * from '@testing-library/react';
