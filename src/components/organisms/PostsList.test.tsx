@@ -17,7 +17,7 @@ describe('<PostsList/>', () => {
         const mock = axiosMock({ delayResponse: 2000 });
 
         // 게시글 조회
-        mock.onGet(`${Domain.API_URL}/posts`).reply(200, posts);
+        mock.onGet(`/posts`).reply(200, posts);
 
         const store = initStore();
         const component = render(<PostsList />, { store });

@@ -8,7 +8,7 @@ import { PostsAction } from 'modules/PostsModule';
 
 // call posts list api
 function fetchPostsApi() {
-    return axios.get(`${Domain.API_URL}/posts`);
+    return axios.get(`/posts`);
 }
 
 // get posts list saga
