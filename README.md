@@ -107,6 +107,7 @@ $ yarn git-hook-reset
     |   |-- index.ts
     |--[stories         : storybook directory
     |--[styles          : styles directory (used @emotion/core)
+    |--[svg             : svg directory
     |--[types           : types directory
 ```
 
