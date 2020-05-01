@@ -3,8 +3,6 @@ import React from 'react';
 import { axiosMock } from 'libs/axios';
 import render from 'libs/test-utils';
 
-import Domain from 'constants/Domain';
-
 import posts from 'data/posts.json';
 
 import { PostsAction } from 'modules/PostsModule';
