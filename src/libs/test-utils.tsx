@@ -1,20 +1,20 @@
 import React, { FC } from 'react';
-import { Provider } from 'react-redux';
-import { Global } from '@emotion/core';
 import { render as reactRender } from '@testing-library/react';
+
+import AppProvider from 'libs/AppProvider';
 
 import { initStore } from 'modules/store';
 
 import { GlobalStyle } from 'styles/App.style';
+import { theme } from 'styles/Themes';
 
 const AllTheProviders = (
     store: ReturnType<typeof initStore> = initStore()
 ): FC => ({ children }) => {
     return (
-        <Provider store={store}>
-            <Global styles={GlobalStyle} />
+        <AppProvider store={store} theme={theme} style={GlobalStyle}>
             {children}
-        </Provider>
+        </AppProvider>
     );
 };
 

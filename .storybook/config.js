@@ -1,13 +1,16 @@
 // in config.js
 import React from 'react';
-import { Global } from '@emotion/core';
 import { addDecorator } from '@storybook/react';
 
+import AppProvider from 'libs/AppProvider';
+
+import { initStore } from 'modules/store';
+
 import { GlobalStyle } from 'styles/App.style';
+import { theme } from 'styles/Themes';
 
 addDecorator((context) => (
-    <>
-        <Global styles={GlobalStyle} />
+    <AppProvider store={initStore()} theme={theme} style={GlobalStyle}>
         {context()}
-    </>
+    </AppProvider>
 ));

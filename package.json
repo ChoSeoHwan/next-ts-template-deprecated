@@ -8,7 +8,9 @@
     "dependencies": {
         "@emotion/core": "^10.0.28",
         "axios": "^0.19.2",
+        "deepmerge": "^4.2.2",
         "dotenv": "^8.2.0",
+        "emotion-theming": "^10.0.27",
         "immer": "^6.0.1",
         "immer-reducer": "^0.7.10",
         "next": "^9.3.2",
