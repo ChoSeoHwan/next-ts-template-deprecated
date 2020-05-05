@@ -97,6 +97,7 @@ $ yarn git-hook-reset
     |--[libs            : internal library directory
     |   |-- axios.ts
     |   |-- test-utils.tsx
+    |   |-- AppProvider.tsx
     |--[modules         : reducer module directory (used immer-reducer)
     |   |-- reducer.ts
     |   |-- store.ts
