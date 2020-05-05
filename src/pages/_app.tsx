@@ -1,10 +1,9 @@
 import React from 'react';
-import { Provider } from 'react-redux';
 import withRedux, { ReduxWrapperAppProps } from 'next-redux-wrapper';
 import RootApp, { AppContext } from 'next/app';
-import { Global } from '@emotion/core';
 import { END } from 'redux-saga';
 
+import AppProvider from 'libs/AppProvider';
 import axios from 'libs/axios';
 
 import TStoreState from 'types/TStoreState';
@@ -14,6 +13,7 @@ import { initStore } from 'modules/store';
 import { sagaTask } from 'sagas';
 
 import { GlobalStyle } from 'styles/App.style';
+import { theme } from 'styles/Themes';
 
 class App extends RootApp<ReduxWrapperAppProps<TStoreState>> {
     static async getInitialProps({ Component, ctx }: AppContext) {
@@ -41,10 +41,9 @@ class App extends RootApp<ReduxWrapperAppProps<TStoreState>> {
     render() {
         const { Component, pageProps, store } = this.props;
         return (
-            <Provider store={store}>
-                <Global styles={GlobalStyle} />
+            <AppProvider store={store} theme={theme} style={GlobalStyle}>
                 <Component {...pageProps} />
-            </Provider>
+            </AppProvider>
         );
     }
 }
