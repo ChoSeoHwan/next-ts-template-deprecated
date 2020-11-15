@@ -1,3 +1,7 @@
+# ⛔️ DEPRECATED
+
+Please use [next-ts-template](https://github.com/ChoSeoHwan/next-ts-template) instead of this project.
+
 # next-ts-template
 
 [Next js](https://nextjs.org/) template with [Typescript](https://www.typescriptlang.org/).
