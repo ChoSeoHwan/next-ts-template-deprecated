@@ -1,3 +1,5 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 # ⛔️ DEPRECATED
 
 Please use [next-ts-template](https://github.com/ChoSeoHwan/next-ts-template) instead of this project.
